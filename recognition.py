@@ -31,7 +31,7 @@ def capture_photo(name):
         if cv2.waitKey(1) & 0xFF == ord(' '):
             photo_path = os.path.join(CAPTURE_FOLDER, f"{name}.jpg")
             cv2.imwrite(photo_path, frame)
-            st.success(f"Photo capturée et enregistrée")
+            print(f"Photo capturée et enregistrée")
             break
 
         # Appuyer sur 'Q' pour quitter
@@ -71,36 +71,9 @@ def load_face_descriptor(name):
         return pickle.loads(result[0])  # Désérialisation du descripteur
     return None
 
-# Fonction pour capturer une photo avec la webcam
-def capture_photo():
-    cap = cv2.VideoCapture(0)
-    st.write("Demarrez la reconnaissance faciale en appuyant sur 'Espace' & 'Q' pour quitter.")
-    photo = None
-
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            st.error("Erreur lors de l'ouverture de la caméra.")
-            break
-
-        cv2.imshow("Capture d'image", frame)
-
-        # Appuyer sur 'Espace' pour capturer la photo
-        if cv2.waitKey(1) & 0xFF == ord(' '):
-            photo = frame
-            break
-
-        # Appuyer sur 'Q' pour quitter
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-
-    cap.release()
-    cv2.destroyAllWindows()
-
-    return photo
-
 # Fonction pour comparer les descripteurs faciaux
 def compare_face(photo, stored_descriptor):
+    photo = cv2.imread(photo)
     image_reduit = cv2.resize(photo, (0, 0), None, 0.25, 0.25)
     face_locations = face_recognition.face_locations(image_reduit)
     face_encodings = face_recognition.face_encodings(image_reduit, face_locations)

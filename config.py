@@ -10,7 +10,7 @@ def create_database():
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL,
+        name TEXT UNIQUE NOT NULL,
         email TEXT,
         password TEXT ,
         face_descriptor BLOB
