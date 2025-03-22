@@ -1,0 +1,6 @@
+env
+users_faces.db
+secrets.toml
+.capture
+__pycache__
+capture
