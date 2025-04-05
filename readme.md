@@ -26,6 +26,12 @@ This project is a face authentication system built using Python and Streamlit. I
 - OpenCV
 - face_recognition
 - SQLite3
+-PIL
+-bio-taxo
+-mahotas
+-scikit-image
+-scipy
+-scikit-learn
 
 ## Installation
 
@@ -51,3 +57,5 @@ This project is a face authentication system built using Python and Streamlit. I
 5. Run the Streamlit app:
    ```bash
     streamlit run main.py
+
+# & ".\env\Scripts\python.exe" -m streamlit run main.py
