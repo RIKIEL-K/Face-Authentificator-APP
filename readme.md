@@ -9,6 +9,7 @@ This project is a face authentication system built using Python and Streamlit. I
 - **Face ID Registration**: Users can register their face for authentication.
 - **Face ID Authentication**: Users can log in using facial recognition.
 - **Database Storage**: User data and facial descriptors are stored in an SQLite database.
+- **Search Face**: Allows searching for a face in the database using advanced algorithms.
 
 
 ### Key Files
@@ -18,7 +19,7 @@ This project is a face authentication system built using Python and Streamlit. I
 - **[`recognition.py`](recognition.py)**: Handles facial recognition, including capturing photos, extracting face descriptors, and comparing faces.
 - **[`pages/inscription.py`](pages/inscription.py)**: Implements user registration and login functionality.
 - **[`pages/Face ID.py`](pages/Face%20ID.py)**: Implements Face ID registration and authentication.
-
+-**[`pages/Recherche de visage.py`](pages/recherche de visage)**: Implements the "Search Face" feature.
 ## Requirements
 
 - Python 3.10 or higher
@@ -57,5 +58,4 @@ This project is a face authentication system built using Python and Streamlit. I
 5. Run the Streamlit app:
    ```bash
     streamlit run main.py
-
-# & ".\env\Scripts\python.exe" -m streamlit run main.py
+    & ".\env\Scripts\python.exe" -m streamlit run main.py
